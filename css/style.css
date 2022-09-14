@@ -6,11 +6,19 @@
 }
 
 body{
-    background: linear-gradient(180deg,rgba(89,76,238, 1)0%, #8dd0f5 100%);
+    background-color:hsla(213,68%,64%,1);
+    background-image:
+    radial-gradient(at 83% 88%, hsla(237,85%,56%,1) 0px, transparent 50%),
+    radial-gradient(at 4% 5%, hsla(237,85%,57%,1) 0px, transparent 50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+}
+
+#logo{
+    max-width: 250px;
 }
 
 .hide{
@@ -102,4 +110,12 @@ body{
     border-right: 1px solid #fff;
     margin: 0.6rem;
     padding: 0.6rem;
+ }
+
+ #eu{
+    font-size: 1.2rem;
+    color: #fdfdfd;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 5rem;
  }

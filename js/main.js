@@ -39,6 +39,8 @@ const showWeatherData = async (city) => {
 
         weatherContainer.classList.remove("hide")
 
+        cityInput.value = ""
+
 }
 
 // Eventos 
