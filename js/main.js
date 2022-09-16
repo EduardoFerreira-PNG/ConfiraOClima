@@ -13,7 +13,10 @@ const countryElement = document.querySelector("#country");
 const humidityElement = document.querySelector("#humidity span");
 const windElement = document.querySelector("#wind span");
 
-const weatherContainer = document.querySelector("#weather-data")
+const weatherContainer = document.querySelector("#weather-data");
+
+const containerSugestao = document.querySelector(".sugestao")
+const buttons = document.querySelectorAll(".sugestao button")
 
 // Funções
 
@@ -26,7 +29,15 @@ const getWeatherData = async(city) => {
 
 }
 
+const hideInformation = () => {  
+    containerSugestao.classList.remove("sugestao");
+    containerSugestao.classList.add("hide")
+  };
+
 const showWeatherData = async (city) => {
+    hideInformation()
+    
+
     const data = await getWeatherData(city);
 
     cityElement.innerText = data.name;
@@ -57,7 +68,16 @@ searchBtn.addEventListener("click", (e) => {
 cityInput.addEventListener("keyup", (e) => {
     if(e.code === "Enter"){
         const city = e.target.value
-
         showWeatherData(city)
     }
 })
+
+buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        console.log(btn)
+      const city = btn.getAttribute("id");
+        hideInformation()
+      
+      showWeatherData(city);
+    });
+  });
